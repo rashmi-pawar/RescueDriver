@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>646728567449-gogd06hopjmn69vseuuk0m8vtcmu3mgb.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.646728567449-gogd06hopjmn69vseuuk0m8vtcmu3mgb</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>646728567449-qpss34qt2rsdjk4mocpvthd37qenrg6b.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyBie58GOuqE4cr2ntCd1v_luzEobTb-ytU</string>
+	<key>GCM_SENDER_ID</key>
+	<string>646728567449</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.alpha.rescuedriver</string>
+	<key>PROJECT_ID</key>
+	<string>reacueanycar</string>
+	<key>STORAGE_BUCKET</key>
+	<string>reacueanycar.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:646728567449:ios:09e87475ea3c3791808608</string>
+	<key>DATABASE_URL</key>
+	<string>https://reacueanycar.firebaseio.com</string>
+</dict>
+</plist>

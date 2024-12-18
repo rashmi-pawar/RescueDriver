@@ -1,0 +1,24 @@
+page-view-vehicle-details {
+    .main-bg {
+        background-image: url(../assets/img/Login_bg.png);
+        background-size: cover;
+        background-repeat: no-repeat;
+    }    
+    .main-bg .item{
+        padding: 6px 0px 0px;
+        border-bottom: 1px solid #000000;
+    } 
+    .signin-btn button{
+        width: 55%;
+        margin-top: 10rem;
+    }
+    .main-bg .item{
+        min-height: 3.4rem;
+    }    
+    .main-bg .item .item-inner {
+        padding: 0px;
+    }
+    .main-bg .item .item-inner .text-yellow {
+        margin: 0px;
+    }
+}

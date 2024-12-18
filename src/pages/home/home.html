@@ -1,0 +1,128 @@
+<ion-header class="top-header">
+  <ion-navbar>
+    <ion-buttons no-margin left class="drover_icn">
+      <button no-margin ion-button icon-only menuToggle>
+        <ion-icon class="text-white" name="md-menu"></ion-icon>
+      </button>
+    </ion-buttons>
+    <!-- <ion-title text-left>Booking Request </ion-title> -->
+    <!-- <div right> -->
+    <ion-row class="online-offline">
+      <ion-col col-4 class="offline">
+        Offline
+      </ion-col>
+      <ion-col col-4>
+        <ion-toggle [(ngModel)]="pepperoni" (ionChange)="goOnline()" color="secondary"></ion-toggle>
+      </ion-col>
+      <ion-col col-4 class="offline">
+        Online
+      </ion-col>
+    </ion-row>
+    <ion-buttons right class="notification_icn" (click)="openNotif()">
+      <button ion-button icon-only light class="text-white">
+        <img src="assets/img/notifications.png">
+      </button>
+    </ion-buttons>
+    <!-- </div> -->
+  </ion-navbar>
+</ion-header>
+<ion-content padding class="driver_list">
+  <div>
+    <ion-segment [(ngModel)]="pet">
+      <ion-segment-button value="kittens">
+        Today Jobs
+      </ion-segment-button>
+      <ion-segment-button value="puppies">
+        Prescheduled Jobs
+      </ion-segment-button>
+    </ion-segment>
+  </div>
+
+  <div [ngSwitch]="pet">
+    <div *ngSwitchCase="'kittens'">
+
+      <div margin-top class="text-black bold" text-center *ngIf="isListEmpty">No Booking requests are available
+        <!-- {{getMinutes}}:{{getSeconds}} -->
+      </div>
+      <ion-list *ngIf="!isListEmpty" margin-top>
+        <div *ngFor="let item of bookingList">
+          <ion-card margin-bottom *ngIf="item.pick_date==curDate">
+          <ion-row>
+            <ion-col col-2 no-padding>
+              <img [src]="item.image && item.image !==''?item.image:'assets/img/user-customer.png'">
+            </ion-col>
+            <ion-col col-10>
+              <div class="btn_box">
+                <h6 class="small-text">{{item.username}}</h6>
+                <div text-right class="right_btn">
+                  <button (click)="reject(item.id)" small round class="Reject_btn text-white medium-bold">Reject </button>
+                  <button small round class="View_btn text-white medium-bold" (click)="view(item)">View</button>
+                </div>
+              </div>
+              <div class="pickup_location">
+                <span item-start>Pickup Location : <b>{{item.pick_location}}</b></span>
+                <span item-end text-right class="medium-text">Time : {{item.pick_time}}</span>
+              </div>
+              <div class="Drop_location">
+                <span item-start>Drop Location : <b>{{item.drop_location}}</b></span>
+                <span item-end text-right class="medium-text">Date : {{item.pick_date}}</span>
+              </div>
+              <div class="Drop_location">
+                <span item-start><b>Booking No. :</b></span>
+                <span item-end text-right class="medium-text"><b>{{item.booking_ref}}</b></span>
+              </div>
+              <div class="Drop_location" *ngIf="!hidevalueReject">
+                <span item-start><b>Remaining Time :</b></span>
+                <span item-end text-right class="medium-text text-orangee"><b>{{getMinutes}}:{{getSeconds}} </b></span>
+              </div>
+            </ion-col>
+          </ion-row>
+        </ion-card>
+        </div>
+      </ion-list>
+    </div>
+
+    <div *ngSwitchCase="'puppies'">
+      <div margin-top class="text-black bold" text-center *ngIf="isListEmpty">No Booking requests are available</div>
+      <ion-list *ngIf="!isListEmpty" margin-top>
+        <div *ngFor="let item of bookingList">
+          <ion-card margin-bottom *ngIf="item.pick_date>curDate">
+            <ion-row>
+              <ion-col col-2 no-padding>
+                <img [src]="item.image && item.image !==''?item.image:'assets/img/user-customer.png'">
+              </ion-col>
+              <ion-col col-10>
+                <div class="btn_box">
+                  <h6 class="small-text">{{item.username}}</h6>
+                  <div text-right class="right_btn">
+                    <button (click)="reject(item.id)" small round class="Reject_btn text-white medium-bold">Reject
+                    </button>
+                    <button small round class="View_btn text-white medium-bold" (click)="view(item)">View</button>
+                  </div>
+                </div>
+                <div class="pickup_location">
+                  <span item-start>Pickup Location : <b>{{item.pick_location}}</b></span>
+                  <span item-end text-right class="medium-text">Time : {{item.pick_time}}</span>
+                </div>
+                <div class="Drop_location">
+                  <span item-start>Drop Location : <b>{{item.drop_location}}</b></span>
+                  <span item-end text-right class="medium-text">Date : {{item.pick_date}}</span>
+                </div>
+                <div class="Drop_location">
+                  <span item-start><b>Booking No. :</b></span>
+                  <span item-end text-right class="medium-text"><b>{{item.booking_ref}}</b></span>
+                </div>
+              </ion-col>
+            </ion-row>
+          </ion-card>
+        </div>
+      </ion-list>
+    </div>
+  </div>
+</ion-content>
+
+<ion-footer>
+  <div class="refresh_btn">
+    <button (click)="getAllRequestGet(true)" ion-button block round class="yellow_btn">Refresh</button>
+  </div>
+</ion-footer>

@@ -1,0 +1,51 @@
+page-change-vehicle-details {
+    .main-bg {
+        background-image: url(../assets/img/Login_bg.png);
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+    .signin-btn button{
+        width: 50%;
+    }
+    .change_details {
+        margin: 5rem 0rem 10rem 0rem;
+    }
+    .change_details img {
+        width: 75%;
+    }
+
+  .fileInput label {
+    color: #717171;
+    background-color: white;
+    display: inline-block;
+    cursor: pointer;
+    padding: .5em 1em;
+    border: 1px solid #ccc;
+    cursor: pointer;
+  }
+  .item-input .label {
+    color: #000;
+    font-size: 1.4rem;
+  }
+  .item-input .label img {
+    width: 16px;
+    margin-right: 5px;
+  }
+
+  input {
+    position: absolute;
+    width: calc(100% - 8px - 8px);
+    top: 0;
+    left: 18%;
+    right: 0;
+  }
+  .back-arrow{
+    position: absolute;
+    color: black;
+    font-size: 2.5rem;
+    padding: 5pt;
+  }
+  .title{
+    margin-top: 40pt;
+  }
+}

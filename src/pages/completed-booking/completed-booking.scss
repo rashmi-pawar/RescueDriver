@@ -1,0 +1,42 @@
+page-completed-booking {
+    .cancel_list img{
+        width: 65px;
+    }
+    .cancel_list h2 {
+        font-size: 1.2rem;
+        line-height: 0px;
+        margin-bottom: 5px;
+    }
+    .cancel_list span{
+        font-size: 1rem;
+        float: left;
+    }
+    .Drop_location span.text-yellow, .pickup_location span.text-yellow{
+        float: right;
+    }
+    .cancel_list h2 p {
+        display: inline-block;
+        font-size: 1.2rem;
+        font-weight: 500;
+        color: #000;
+        margin-left: 15px;
+    }
+    .history_list {
+        border-bottom: 1px solid #ccc;
+        padding: 15px 0px 8px;
+    }
+    .Drop_location, .pickup_location {
+        display: inline-block;
+        width: 100%;
+    }
+    .cancel_list span.medium-text {
+        font-size: 1.5rem;
+    }
+  .user-image{
+    height: 35pt;
+    width: 35pt !important;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-top: 30px;
+  }
+}

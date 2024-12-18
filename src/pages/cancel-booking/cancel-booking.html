@@ -1,0 +1,50 @@
+
+<ion-header class="top-header">
+  <ion-navbar>
+    <ion-buttons no-margin left class="drover_icn">
+        <button  no-margin ion-button icon-only menuToggle>
+            <ion-icon class="text-white" name="md-menu"></ion-icon>
+        </button>
+    </ion-buttons>
+
+    <ion-title text-center>My History</ion-title>
+
+    <ion-buttons right class="notification_icn" (click)="notification()">
+    <button ion-button icon-only light class="text-white">
+        <img src="assets/img/notifications.png">
+    </button>
+    </ion-buttons>
+
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="cancel_list">
+  <div text-center margin-top class="bold big-text" *ngIf="isListEmpty">No cancelled history data are available</div>
+  <div *ngIf="!isListEmpty">
+    <ion-list>
+      <div *ngFor="let item of historyList"  class="history_list">
+        <ion-row>
+          <ion-col col-2 no-padding>
+            <img class="user-image" [src]="item.user_image&&item.user_image!==''?item.user_image:'assets/img/dummy_pic.png'">
+          </ion-col>
+          <ion-col col-10 no-padding>
+            <div text-wrap padding-left class="btn_box">
+              <h2>Date : {{item.pick_date}} <p>Time : {{item.pick_time}}</p></h2>
+            </div>
+            <div padding-left class="pickup_location">
+              <span item-start>Pickup Location : <b>{{item.pick_location}}</b></span>
+            </div>
+            <div text-wrap padding-left class="Drop_location">
+              <span item-start>Drop Location : <b>{{item.drop_location}}</b></span>
+              <!--<span item-end class="danger">Cancel</span>-->
+            </div>
+            <div padding-left margin-top>
+              <h2>Booking No. : {{item.booking_ref }}</h2>
+            </div>
+          </ion-col>
+        </ion-row>
+      </div>
+
+    </ion-list>
+  </div>
+</ion-content>

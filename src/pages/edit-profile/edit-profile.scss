@@ -1,0 +1,120 @@
+page-edit-profile {
+    .profile_bg {
+        background-image: url(../assets/img/bg_shape.png);
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        padding-top: 9rem;
+    }
+    .profile_bg img {
+      width: 70pt;
+      height: 70pt;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+    .profile_content .transparentt .item-inner {
+        border-bottom: 1px solid #000000;
+    }
+    .profile_content .transparentt.item {
+        min-height: 3.4rem;
+    } 
+     .main-bg .transparent .item-inner {
+        padding: 0px;
+        border-bottom: 1px solid #000000;
+    }
+    .signin-btn button{
+        width: 55%;
+        margin-top: 8rem;
+    }
+    .text-yellow {
+        font-size: 2rem;
+        margin-right: 5px;
+    }
+    .item-input .label {
+        color: #000;
+        font-size: 1.4rem;
+    }
+    .signin-btn button{
+        width: 58%;
+    }
+    .small-text p {
+        display: inline-block;
+    }
+    .profile_content textarea.transparentt::placeholder {
+        color: #000;
+    }
+    .profile_content textarea.transparentt {
+        width: 100%;
+        border: none;
+        height: 50px;
+        color: #000;
+        resize: none;
+        margin-top: 23px;
+        border-bottom: 1px solid green;
+    }
+    .item-input .label img {
+        width: 16px;
+        margin-right: 5px;
+    }
+    .transparent.item {
+        background-image: url(../assets/img/upload.png);
+        background-repeat: no-repeat;
+        background-size: 18px;
+        background-position: 97% 55%;
+    }
+    .transparent.item .input{
+        opacity: 0;
+    }
+    .transparent.item.no-icn {
+        background-image:none;
+    }
+    .transparent.item.no-icn .input{
+        opacity: 1;
+    }
+    .main-bg .list {
+        margin: 20px 0px;
+    }
+
+  /*.fileInput {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+  }*/
+
+  .fileInput label {
+    color: #717171;
+    background-color: white;
+    display: inline-block;
+    cursor: pointer;
+    padding: .5em 1em;
+    border: 1px solid #ccc;
+    cursor: pointer;
+  }
+  .image-name{
+    width: 100px;
+    text-align: right;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    position: absolute;
+    top: 7px;
+    right: 25pt;
+  }
+  select{
+    //width: 100%;
+    background: transparent;
+    border: none;
+  }
+  .bottom-border{
+    border-bottom: 1px solid #000000 !important;
+  }
+  .list-md[inset] {
+    margin: 0px;
+    border-radius: 2px;
+}
+.transparent{
+    border-bottom: 2px solid #88c488;
+}
+}

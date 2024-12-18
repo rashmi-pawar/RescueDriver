@@ -1,0 +1,23 @@
+<ion-content padding class="main-bg">
+
+    <ion-icon (click)="back()" class="back-arrow" name="md-arrow-back"></ion-icon>
+    <div class="title">
+        <h1 class="bold" text-center>{{documentName}}</h1>
+    </div>
+    <div text-center class="change_details">
+      <img [src]="vehicleImage && vehicleImage !== ''?vehicleImage:'assets/img/id.png'">
+    </div>
+
+
+  <ion-item *ngIf="!isVehicleChange" no-lines no-padding class="transparent">
+    <!--<ion-label><button (click)="change()" margin-top ion-button round class="yellow_btn">Change</button>
+    </ion-label>-->
+    <!--<ion-label class="image-name" for="registration">{{this.fileData.name}}</ion-label>-->
+    <input name="registration" id="registration" class="fileInput" type="file" (change)="vehicleRegistraionEvent($event)">
+  </ion-item>
+    <div *ngIf="isVehicleChange" text-center margin-top padding-top class="signin-btn">
+      <button (click)="change()" margin-top ion-button round class="yellow_btn">Change</button>
+    </div>
+
+</ion-content>
+

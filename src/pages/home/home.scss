@@ -1,0 +1,67 @@
+page-home {
+    .driver_list .card img {
+        border-radius: 8px 0px 0px 8px;
+        height: 100%;
+        object-fit: cover;
+    }
+    .driver_list .card {
+        border-radius: 8px;
+    }
+    .right_btn button {
+        border-radius: 20px;
+        font-size: 0.9rem;
+        color: #fff;
+        padding: 4px 10px;
+    } 
+    .Reject_btn {
+        background: #E20808;
+    }
+    .View_btn{
+        background: #1DCC3B;
+    }     
+    .driver_list span{ 
+        font-size: 0.9rem;
+    }  
+    .driver_list span, .driver_list h6{ 
+        float: left;
+        padding: 3px 5px 3px 0px;
+        width: 57%;
+    }   
+    .Drop_location span.medium-text, .pickup_location span.medium-text, .right_btn{
+        float: right;
+        padding: 3px 5px 3px 0px;
+        width: 43%;
+    }
+    .driver_list span{ 
+        width: 65%;
+    }   
+    .Drop_location span.medium-text, .pickup_location span.medium-text{
+        width: 35%;
+    }    
+    .driver_list h6 {
+        line-height: 25px;
+        font-weight: 500;
+        font-size: 1.2rem;
+    }        
+    .refresh_btn {
+        padding: 16px 38px;
+    }   
+    .online-offline{
+        width: 180px;
+        float: right;
+        margin: 0px -24px 0px 0;
+    } 
+    .offline{
+        margin: 10px -14px 0px 0;
+        color: white;
+        font-weight: 600;
+    }
+    .toggle-md.toggle-checked .toggle-icon {
+        background-color: #ffffff;
+    }
+    .toggle-md.toggle-checked .toggle-inner {
+        -webkit-transform: translate3d(16px, 0, 0);
+        transform: translate3d(16px, 0, 0);
+        background-color: #2ec95c;
+    }
+}

@@ -1,0 +1,40 @@
+<ion-header class="top-header">
+  <ion-navbar>
+    <ion-title text-center>{{customer && customer.name?customer.name:''}}</ion-title>
+    <ion-buttons right class="notification_icn" (click)="notificaion()">
+      <button ion-button icon-only light class="text-white">
+        <img src="assets/img/notifications.png">
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+  <div *ngIf="isListEmpty" class="bold big-text" text-center padding margin>No chats are available</div>
+  <div *ngIf="!isListEmpty">
+    <div *ngFor="let chat of chats" class="chat_box">
+      <div *ngIf="!chat.isDriver" class="chat_left">
+        <img [src]="customer.image && customer.image !==''? customer.image : 'assets/img/user-default.png'">
+        <span>{{chat.message}}</span>
+      </div>
+      <div *ngIf="chat.isDriver" class="chat_right" text-right>
+        <span>{{chat.message}}</span>
+        <img [src]="driver.image?driver.image:'assets/img/user-default.png'">
+      </div>
+    </div>
+  </div>
+  <emoji-picker *ngIf="toggled" [hidden]="toggled" [(emojiPickerIf)]="toggled" [emojiPickerDirection]="'bottom'"
+                (emojiPickerSelect)="handleSelection($event)"></emoji-picker>
+</ion-content>
+<ion-footer>
+  <ion-list no-margin>
+    <ion-item no-padding>
+      <button ion-button clear (click)="toggled = !toggled" item-start class="transparent text-black emoji">
+        <img src="assets/img/emoji.png">
+      </button>
+      <input [(ngModel)]="msg" type="text" placeholder="Type Your Message...">
+      <button (click)="sendMessage()" item-end class="transparent send_btn">
+        <img src="assets/img/send_icn.png">
+      </button>
+    </ion-item>
+  </ion-list>
+</ion-footer>

@@ -1,0 +1,48 @@
+<ion-header class="transparent">
+    <ion-navbar>
+      <ion-buttons no-margin left>
+        <button  no-margin ion-button icon-only menuToggle>
+          <ion-icon class="text-black" name="md-menu"></ion-icon>
+        </button>
+      </ion-buttons>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding class="main-bg">
+  <div class="login-title">
+    <h1 class="bold">Vehicle Details</h1>
+  </div>
+  <ion-list no-margin padding-top>
+
+    <ion-item margin-top no-padding class="transparent">
+      <span item-start class="medium-text">Vehicle Registration</span>
+      <span item-end class="text-yellow medium-text medium-bold" (click)="view_details(userData.vehicle_registration,1,'Vehicle Registration')">{{vehicleRegistrationView}}</span>
+    </ion-item>
+
+    <ion-item margin-top padding-top no-padding class="transparent">
+      <span item-start class="medium-text">Driving Licence</span>
+      <span item-end class="text-yellow medium-text medium-bold" (click)="view_details(userData.driving_licence,2,'Driving Licence')">{{drivingLicenceView}}</span>
+    </ion-item>
+
+    <ion-item margin-top no-padding class="transparent">
+      <span item-start class="medium-text">Insurance Document</span>
+      <span item-end class="text-yellow medium-text medium-bold" (click)="view_details(userData.insurance_doc,3,'Insurance Document')">{{insuranceDocView}}</span>
+    </ion-item>
+
+    <ion-item margin-top no-padding class="transparent">
+      <span item-start class="medium-text">Vehicle Profile</span>
+      <span item-end class="text-yellow medium-text medium-bold" (click)="view_details(userData.vehicle_image,4,'Vehicle Profile')">{{vehicleImageView}}</span>
+    </ion-item>
+
+    <ion-item margin-top margin-bottom no-padding class="transparent">
+      <span item-start class="medium-text">Background Checks</span>
+      <span item-end class="text-yellow medium-text medium-bold" (click)="view_details(userData.background_check,5,'Background Checks')">{{backgroundCheckView}}</span>
+    </ion-item>
+
+    <div text-center class="signin-btn">
+      <button (click)="save()" ion-button round class="yellow_btn">Save</button>
+    </div>
+
+  </ion-list>
+</ion-content>
+

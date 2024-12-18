@@ -1,0 +1,46 @@
+page-login {    
+    .main-bg {
+        background-image: url(../assets/img/Login_bg.png);
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+    img.logo {
+        width: 60%;
+    }     
+    .main-bg .transparent .item-inner {
+        border-bottom: 1px solid #000000;
+    } 
+    .signin-btn button{
+        width:60%;
+    }         
+    .small-text p {
+        display: inline-block;
+    }     
+    .text-yellow {
+        font-size: 2rem; 
+        margin-right: 5px;
+    }
+    .item-input .label {
+        color: #000;
+        font-size: 1.4rem;
+        line-height: 0px;
+    }        
+    .Register_text p {
+        font-weight: 500;
+    }
+    .Register_text span {
+        font-style: italic;
+    }    
+    .transparent.email .text-yellow {
+        top: 2px;
+        position: relative;
+    }
+    p.send_otp.redius-10.no-shadow {
+        margin: 32px 0 0 0;
+        font-size: 1.2em;
+        font-weight: 900;
+    }
+    .select-md .select-icon {
+        margin: 6px 0 0 0;
+    }
+}

@@ -1,0 +1,135 @@
+<ion-content padding-top class="main-bg">
+  <div text-center padding-top class="login-title">
+    <img margin-bottom class="logo" src="assets/img/logo.png">
+    <h1 class="bold">Create an Account</h1>
+  </div>
+  <!-- <form [formGroup]="signUpForm">
+    <ion-list padding>
+      <ion-item no-padding class="transparent">
+        <ion-label floating><ion-icon large class="text-yellow" name="person"></ion-icon> FullName</ion-label>
+        <ion-input formControlName="fullName" type="text"></ion-input>
+      </ion-item>
+      <div>
+        <ng-container *ngFor="let error of error_messages.fullName">
+          <div class="error-message" *ngIf="signUpForm.get('fullName').hasError(error.type) &&
+                (signUpForm.get('fullName').dirty || signUpForm.get('fullName').touched)">
+            {{ error.message }}
+          </div>
+        </ng-container>
+      </div>
+
+      <ion-item no-padding class="transparent">
+        <ion-label floating><ion-icon large class="text-yellow" name="ios-mail"></ion-icon> Email</ion-label>
+        <ion-input formControlName="email" type="email"></ion-input>
+      </ion-item>
+      <div>
+        <ng-container *ngFor="let error of error_messages.email">
+          <div class="error-message" *ngIf="signUpForm.get('email').hasError(error.type) &&
+                (signUpForm.get('email').dirty || signUpForm.get('email').touched)">
+            {{ error.message }}
+          </div>
+        </ng-container>
+      </div>
+
+      <ion-item no-padding class="transparent">
+        <ion-label floating><ion-icon large class="text-yellow" name="call"></ion-icon> Mobile No</ion-label>
+        <ion-input formControlName="mobileNumber" type="number"></ion-input>
+      </ion-item>
+      <div>
+        <ng-container *ngFor="let error of error_messages.mobileNumber">
+          <div class="error-message"
+               *ngIf="signUpForm.get('mobileNumber').hasError(error.type) && (signUpForm.get('mobileNumber').dirty || signUpForm.get('mobileNumber').touched)">
+            {{ error.message }}
+          </div>
+        </ng-container>
+      </div>
+
+      <ion-item no-padding class="transparent">
+        <ion-label floating><img src="assets/img/address-card.png"> Address</ion-label>
+        <ion-input formControlName="address" type="text"></ion-input>
+      </ion-item>
+      <div>
+        <ng-container *ngFor="let error of error_messages.address">
+          <div class="error-message"
+               *ngIf="signUpForm.get('address').hasError(error.type) && (signUpForm.get('address').dirty || signUpForm.get('address').touched)">
+            {{ error.message }}
+          </div>
+        </ng-container>
+      </div>
+
+      <ion-item  no-padding class="transparent">
+        <ion-label floating><ion-icon class="text-yellow" name="md-key"></ion-icon> Password</ion-label>
+        <ion-input style="padding-right: 20pt;" formControlName="password" [type]="show ? 'text' : 'password'"></ion-input>
+      </ion-item>
+      <div (click)="show = !show" class="icon-div eye-div">
+        <ion-icon *ngIf="!show" class="icon-eye text-grey" ios="ios-eye" md="md-eye"></ion-icon>
+        <ion-icon *ngIf="show" class="icon-eye text-grey" ios="ios-eye-off" md="md-eye-off"></ion-icon>
+      </div>
+      <div>
+        <ng-container *ngFor="let error of error_messages.password">
+          <div class="error-message"
+               *ngIf="signUpForm.get('password').hasError(error.type) && (signUpForm.get('password').dirty || signUpForm.get('password').touched)">
+            {{ error.message }}
+          </div>
+        </ng-container>
+      </div>
+
+      <div text-center margin-top padding-top class="signin-btn">
+        <button [disabled]="signUpForm.invalid" margin-top ion-button round class="yellow_btn" (click)="signUp()" >Sign Up</button>
+      </div>
+    </ion-list>
+  </form> -->
+ 
+ 
+ 
+  <form [formGroup]="signUpForm" padding>
+    <ion-list>
+      <ion-item no-padding class="transparent email">
+        <ion-select formControlName="dialcodecountry" >
+          <ion-option *ngFor="let data of codemapdata" value={{data.dialCode}}  [selected]="data.dialCode=='+44'">{{data.emoji}}&nbsp;&nbsp;{{data.dialCode}}</ion-option>
+        </ion-select>
+        <ion-input type="number" placeholder="Phone Number" formControlName="mobileNumber"></ion-input>
+      </ion-item>
+      <div>
+        <ng-container *ngFor="let error of error_messages.mobileNumber">
+          <div class="error-message"
+               *ngIf="signUpForm.get('mobileNumber').hasError(error.type) && (signUpForm.get('mobileNumber').dirty || signUpForm.get('email').touched)">
+            {{ error.message }}
+          </div>
+        </ng-container>
+      </div>
+
+      <div text-center class="signin-btn">
+        <p full class="send_otp redius-10 no-shadow" (click)="sendOtp()">Send OTP</p>
+      </div>
+      <!-- <div text-center class="signin-btn">
+        <p full class="send_otp redius-10 no-shadow" (click)="resendOtp()">Resend OTP</p>
+      </div> -->
+
+      <ion-item  no-padding class="transparent">
+        <ion-label floating><ion-icon class="text-yellow" name="md-key"></ion-icon> OTP</ion-label>
+        <ion-input type="Number" formControlName="otp"></ion-input>
+      </ion-item>
+      <div>
+        <ng-container *ngFor="let error of error_messages.otp">
+          <div class="error-message"
+               *ngIf="signUpForm.get('otp').hasError(error.type) && (signUpForm.get('otp').dirty || signUpForm.get('otp').touched)">
+            {{ error.message }}
+          </div>
+        </ng-container>
+      </div>
+
+      <!-- <div text-right margin-top margin-bottom class="medium-text">
+        <p (click)="Forgot_pass()">Forgot Password?</p>
+      </div> -->
+      <div text-center margin padding class="signin-btn">
+        <button margin ion-button round class="yellow_btn" (click)="verifyOtp()">Submit</button>
+      </div>
+    </ion-list>
+  </form>
+ 
+  <div text-center padding class="Register_text">
+    <p class="">Already Have An Account? <span (click)="back()" class="semi-bold">Login</span></p>
+  </div>
+</ion-content>
+

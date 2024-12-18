@@ -1,0 +1,33 @@
+page-notifications {   
+    .notifications .item p {
+        color: #2A2A2A;
+    }
+    .notifications .item.item-block {
+        align-items: flex-start;
+    }
+    .card .item {
+        background: #FAFAFA;
+        padding: 5px 0px 5px 7px;
+    }
+    .small-text {
+        font-size: 0.9rem;
+    }
+    .notifications .card {
+        box-shadow: 0px 2px 3px #cccccc82;
+    }        
+    .notifications .card .text-yellow {
+        margin: 13px 0px 9px 0;
+    }
+    .status_box.item {
+        min-height: 3rem;
+    }        
+    .status_box .item-inner .small-text {
+        margin: 9px 0px 9px 0;
+    }
+    .status_box.item .item-inner {
+        padding-right: 0px;
+    }
+    ion-label {
+        white-space: unset;
+    }
+}

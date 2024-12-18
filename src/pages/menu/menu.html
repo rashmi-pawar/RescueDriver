@@ -1,0 +1,63 @@
+<ion-menu [content]="content" (ionOpen)="openMenu()" type="overlay">
+    <ion-content class="sidebar-box yellow_bg">
+      <ion-list>
+        <ion-item no-lines padding-top class="user-div">
+          <div item-start >
+            <img [src]="userData.image?userData.image:'assets/img/user-default.png'">
+          </div>
+          <div>
+            <h3 class="">
+              <!-- {{userData.username}} -->
+              {{userData.username && userData.username !==''?userData.username:''}}
+            </h3>
+            <div text-wrap class="semi-bold small-text" style="margin-top: 5px">
+              <!-- {{userData.email}} -->
+              {{userData.email && userData.email !==''?userData.email:userData.phone_number}}
+            </div>
+          </div>
+          <ion-icon item-right class="" name="ios-arrow-forward"></ion-icon>
+        </ion-item>
+        <ion-item no-lines>
+          <button menuToggle ion-button item-right round class="yellow_btn" (click)="edit_profile()">Edit profile</button>
+       </ion-item>
+       <ion-item no-lines>
+        <div class="text-black medium-text" item-left>Total Earnings</div>
+        <div class="text-black medium-text" item-right>{{totalEarning && totalEarning !==''?totalEarning:'0'}}£</div>
+     </ion-item>
+
+        <div padding class="list-box">
+          <ion-item no-padding menuToggle no-lines (click)="openPage('MenuPage')"  class="small-text transparent">
+            <!-- <ion-icon class="menu-icons text-white" item-left name="ios-home"></ion-icon> -->
+            <img item-left class="menu-icons" src="assets/img/home.png">
+            <div class="text-white medium-text">Home</div>
+          </ion-item>
+          <ion-item no-padding menuToggle no-lines (click)="openPage('TabsPage')" class="small-text transparent">
+            <img item-left class="menu-icons" src="assets/img/history.png">
+            <div class="text-white medium-text">My History</div>
+          </ion-item>
+          <!-- <ion-item no-padding menuToggle no-lines  (click)="openPage('ViewVehicleDetailsPage')"  class="small-text transparent">
+            <img item-left class="menu-icons" src="assets/img/v-details.png">
+            <div class="text-white medium-text">Vehicle Details</div>
+          </ion-item> -->
+          <ion-item no-padding menuToggle no-lines (click)="openPage('ChatListPage')" class="small-text transparent">
+            <img item-left class="menu-icons" src="assets/img/chat.png">
+            <div class="text-white medium-text">Chatlist</div>
+          </ion-item>
+          <ion-item (click)="shareApp()" no-padding menuToggle no-lines class="small-text transparent">
+            <img item-left class="menu-icons share" src="assets/img/share.png" style="width: 1.6rem;">
+            <div class="text-white medium-text">Share App</div>
+          </ion-item>
+          <ion-item (click)="help()" no-padding menuToggle no-lines class="small-text transparent">
+            <img item-left class="menu-icons help" src="assets/img/help.png" style="width: 1.2rem;">
+            <div class="text-white medium-text">Help</div>
+          </ion-item>
+          <ion-item (click)="logout()" no-padding menuToggle no-lines class="small-text transparent">
+            <img item-left class="menu-icons" src="assets/img/logout.png">
+            <div class="text-white medium-text">Logout</div>
+          </ion-item>
+        </div>
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+
+  <ion-nav #content [root]="rootPage"></ion-nav>

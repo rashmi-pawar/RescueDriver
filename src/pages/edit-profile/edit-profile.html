@@ -1,0 +1,158 @@
+<ion-header class="top-header">
+  <ion-navbar>
+    <ion-title text-center>Edit profile</ion-title>
+    <ion-buttons right class="hide_icn">
+      <button ion-button icon-only light class="text-white">
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<ion-content class="profile_content">
+  <div text-center class="profile_bg">
+    <img (click)="openPicker()" [src]="profileImgToShow&&profileImgToShow!==''?profileImgToShow:'assets/img/user-default.png'">
+  </div>
+    <ion-list padding margin-top>
+      <ion-item no-padding margin-top class="transparentt">
+        <ion-input [(ngModel)]="fullName" no-margin type="text" placeholder="FullName" class="medium-text"></ion-input>
+      </ion-item>
+      <ion-item no-padding margin-top class="transparentt">
+        <ion-input [(ngModel)]="mobileNumber" no-margin type="number" placeholder="Mobile No." class="medium-text" readonly=""></ion-input>
+      </ion-item>
+      <textarea [(ngModel)]="bio" class="transparentt medium-text" placeholder="Enter Bio"></textarea>
+     
+    <ion-list inset no-margin>
+      <!-- <ion-item margin-top no-padding class="transparent">
+        <ion-label for="registration">Vehicle Registration</ion-label>
+        <ion-label class="image-name" for="registration">{{this.vehicleRegistraion.name}}</ion-label>
+        <ion-input name="registration" id="registration" class="fileInput" type="file" (change)="vehicleRegistraionEvent($event)"></ion-input>
+      </ion-item>
+
+      <ion-item margin-top no-padding class="transparent">
+        <ion-label>Driving Licence</ion-label>
+        <ion-label class="image-name">{{this.drivingLicence.name}}</ion-label>
+        <ion-input name="drivingLicence" id="drivingLicence" class="fileInput" type="file" (change)="drivingLicenceEvent($event)"></ion-input>
+      </ion-item>
+
+      <ion-item margin-top no-padding class="transparent">
+        <ion-label>Insurance Document</ion-label>
+        <ion-label class="image-name">{{this.insuranceDoc.name}}</ion-label>
+        <ion-input name="insuranceDoc" id="insuranceDoc" class="fileInput" type="file" (change)="insuranceDocEvent($event)"></ion-input>
+      </ion-item>
+
+      <ion-item margin-top no-padding class="transparent">
+        <ion-label>Vehicle Profile</ion-label>
+        <ion-label class="image-name">{{this.vehicleProfile.name}}</ion-label>
+        <ion-input name="vehicleProfile" id="vehicleProfile" class="fileInput" type="file" (change)="vehicleProfileDocEvent($event)"></ion-input>
+      </ion-item>
+
+      <ion-item margin-top no-padding class="transparent">
+        <ion-label>Background Checks</ion-label>
+        <ion-label class="image-name">{{this.backgroundCheck.name}}</ion-label>
+        <ion-input name="backgroundCheck" id="backgroundCheck" class="fileInput" type="file" (change)="backgroundCheckEvent($event)"></ion-input>
+      </ion-item>
+
+      <ion-item margin-top no-padding class="transparent no-icn">
+        <ion-label floating>Vehicle Number</ion-label>
+        <ion-input type="text" [(ngModel)]="vehicleNumber"></ion-input>
+      </ion-item>
+
+      <ion-item margin-top no-padding class="transparent no-icn">
+        <ion-label floating>Vehicle Pay Load(Only in Ton)</ion-label>
+        <ion-input type="number" [(ngModel)]="payload" ></ion-input>
+      </ion-item>
+
+      <ion-item margin-top no-padding no-lines class="transparent no-icn bottom-border">
+        <label for="ctype">Number of People carry </label>
+        <select id="ctype" [(ngModel)]="passengers" class="transparent no-icn right-align" style="border-bottom: 2px solid #ffffff;">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select>
+      </ion-item>
+
+      <ion-item margin-top no-padding no-lines class="transparent no-icn bottom-border">
+        <label for="type">Select Tow Type</label>
+        <select id="type" [(ngModel)]="vehicleType" class="transparent no-icn right-align" style="border-bottom: 2px solid #ffffff;">
+          <option *ngFor="let item of towType" value="{{item.id}}">{{ item.name}}</option>
+        </select>
+      </ion-item> -->
+      <ion-item no-padding margin-top class="transparentt">
+        <ion-input [(ngModel)]="vehicleNumber" no-margin type="text" placeholder="Vehicle Registration" class="medium-text"></ion-input>
+      </ion-item>
+      <!-- <ion-item margin-top no-padding class="transparentt no-icn">
+        <ion-label floating>Vehicle Registration</ion-label>
+        <ion-input type="text" [(ngModel)]="vehicleNumber"></ion-input>
+      </ion-item> -->
+      <!-- <ion-item margin-top no-padding class="transparent">
+        <ion-label for="registration">Vehicle Registration</ion-label>
+        <ion-label class="image-name" for="registration">{{this.vehicleRegistraion.name}}</ion-label>
+        <ion-input name="registration" id="registration" class="fileInput" type="file" (change)="vehicleRegistraionEvent($event)"></ion-input>
+      </ion-item> -->
+
+      <ion-item margin-top no-padding class="transparent">
+        <ion-label>Driving Licence</ion-label>
+        <ion-label class="image-name">{{this.drivingLicence.name}}</ion-label>
+        <ion-input name="drivingLicence" id="drivingLicence" class="fileInput" type="file" (change)="drivingLicenceEvent($event)"></ion-input>
+      </ion-item>
+
+      <ion-item margin-top no-padding class="transparent">
+        <ion-label>Insurance Document</ion-label>
+        <ion-label class="image-name">{{this.insuranceDoc.name}}</ion-label>
+        <ion-input name="insuranceDoc" id="insuranceDoc" class="fileInput" type="file" (change)="insuranceDocEvent($event)"></ion-input>
+      </ion-item>
+
+      <ion-item margin-top no-padding class="transparent">
+        <ion-label>Logbook</ion-label>
+        <ion-label class="image-name">{{this.vehicleProfile.name}}</ion-label>
+        <ion-input name="vehicleProfile" id="vehicleProfile" class="fileInput" type="file" (change)="vehicleProfileDocEvent($event)"></ion-input>
+      </ion-item>
+
+      
+      <!-- <ion-item margin-top no-padding class="transparent">
+        <ion-label>Background Checks</ion-label>
+        <ion-label class="image-name">{{this.backgroundCheck.name}}</ion-label>
+        <ion-input name="backgroundCheck" id="backgroundCheck" class="fileInput" type="file" (change)="backgroundCheckEvent($event)"></ion-input>
+      </ion-item> -->
+
+      <!-- <ion-item margin-top no-padding class="transparent no-icn">
+        <ion-label floating>Vehicle Number</ion-label>
+        <ion-input type="text" [(ngModel)]="vehicleNumber"></ion-input>
+      </ion-item> -->
+
+      <!-- <ion-item no-padding class="no-icn">
+        <ion-label floating>Vehicle Pay Load(Only in Kgs)</ion-label>
+        <ion-input type="number" [(ngModel)]="payload" ></ion-input>
+      </ion-item> -->
+      <ion-item no-padding margin-top class="transparentt">
+        <ion-input type="number" [(ngModel)]="payload" no-margin placeholder="Vehicle Pay Load(Only in Kgs)" class="medium-text"></ion-input>
+      </ion-item>
+
+      <ion-item margin-top no-padding no-lines class="transparent no-icn bottom-border">
+        <label for="ctype">Number of People carry </label>
+        <select id="ctype" [(ngModel)]="passengers" class="no-icn right-align">
+          <option value="0">0</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select>
+      </ion-item>
+
+      <ion-item margin-top no-padding no-lines class="transparent no-icn bottom-border">
+        <label for="type">Select Tow Type</label>
+        <select id="type" [(ngModel)]="vehicleType" class="no-icn right-align">
+          <option *ngFor="let item of towType" value="{{item.id}}">{{ item.name}}</option>
+        </select>
+      </ion-item>
+     </ion-list>
+      <div text-center margin padding class="signin-btn">
+        <button (click)="save()" margin ion-button round class="yellow_btn">Save</button>
+      </div>
+      <div (click)="deleteAccount()" text-center margin class="Delete_act">
+        <p class="">Delete My Account</p>
+      </div>
+    </ion-list>
+</ion-content>

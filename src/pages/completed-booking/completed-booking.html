@@ -1,0 +1,185 @@
+<ion-header class="top-header">
+  <ion-navbar>
+    <ion-buttons no-margin left class="drover_icn">
+      <button no-margin ion-button icon-only menuToggle>
+        <ion-icon class="text-white" name="md-menu"></ion-icon>
+      </button>
+    </ion-buttons>
+
+    <ion-title text-center>My History</ion-title>
+
+    <ion-buttons right class="notification_icn" (click)="notificaion()">
+      <button ion-button icon-only light class="text-white">
+        <img src="assets/img/notifications.png">
+      </button>
+    </ion-buttons>
+
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="cancel_list">
+  <div text-center margin-top class="bold big-text" *ngIf="isListEmpty">No completed history data are available</div>
+  <div *ngIf="!isListEmpty">
+
+    <ion-segment [(ngModel)]="pet">
+      <ion-segment-button value="kittens">
+        Day
+      </ion-segment-button>
+      <ion-segment-button value="puppies">
+        Week
+      </ion-segment-button>
+      <ion-segment-button value="dog">
+        Month
+      </ion-segment-button>
+      <ion-segment-button value="cat">
+        All
+      </ion-segment-button>
+    </ion-segment>
+    <div [ngSwitch]="pet">
+      <div *ngSwitchCase="'kittens'">
+        <ion-list>
+          <div *ngFor="let item of historyList" >
+            <div *ngIf="item.pick_date==todayDate">
+              <ion-row class="history_list">
+                <ion-col col-2 no-padding>
+                  <img class="user-image"
+                    [src]="item.user_image&&item.user_image!==''?item.user_image:'assets/img/dummy_pic.png'">
+                </ion-col>
+                <ion-col col-10 no-padding>
+
+                  <div padding-left class="btn_box">
+                    <h2>Date : {{item.pick_date | date: 'dd-MM-yyy' }} <p>Time : {{item.time_left}}</p>
+                    </h2>
+                  </div>
+
+                  <div padding-left class="pickup_location">
+                    <span style="width: 70%;" item-start>Pickup Location : <b>{{item.pick_location}}</b></span>
+                    <span item-end class="text-yellow medium-text">{{item.amount}}£<br>
+                      <span item-end class="text-yellow">{{item.payment_type}} Payment</span></span>
+                  </div>
+
+                  <div padding-left class="Drop_location">
+                    <span style="width: 70%;" item-start>Drop Location : <b>{{item.drop_location}}</b></span>
+                  </div>
+
+                  <div padding-left margin-top>
+                    <h2>Booking No. : {{item.booking_ref }}</h2>
+                  </div>
+                </ion-col>
+              </ion-row>
+            </div>
+          </div>
+        </ion-list>
+      </div>
+
+      <div *ngSwitchCase="'puppies'">
+        <ion-list>
+          <div *ngFor="let item of historyList">
+            <div *ngIf="item.pick_date>firstDay && item.pick_date<lastDay">
+            <ion-row  class="history_list">
+              <ion-col col-2 no-padding>
+                <img class="user-image"
+                  [src]="item.user_image&&item.user_image!==''?item.user_image:'assets/img/dummy_pic.png'">
+              </ion-col>
+              <ion-col col-10 no-padding>
+
+                <div padding-left class="btn_box">
+                  <h2>Date : {{item.pick_date | date: 'dd-MM-yyy' }} <p>Time : {{item.time_left}}</p>
+                  </h2>
+                </div>
+
+                <div padding-left class="pickup_location">
+                  <span style="width: 70%;" item-start>Pickup Location : <b>{{item.pick_location}}</b></span>
+                  <span item-end class="text-yellow medium-text">{{item.amount}}£<br>
+                    <span item-end class="text-yellow">{{item.payment_type}} Payment</span></span>
+                </div>
+
+                <div padding-left class="Drop_location">
+                  <span style="width: 70%;" item-start>Drop Location : <b>{{item.drop_location}}</b></span>
+                </div>
+
+                <div padding-left margin-top>
+                  <h2>Booking No. : {{item.booking_ref }}</h2>
+                </div>
+              </ion-col>
+            </ion-row>
+            </div>
+          </div>
+        </ion-list>
+      </div>
+
+      <div *ngSwitchCase="'dog'">
+        <ion-list>
+          <div *ngFor="let item of historyList">
+            <div *ngIf="item.pick_date>firstDayMonth && item.pick_date<lastDayMonth">
+            <ion-row  class="history_list">
+              <ion-col col-2 no-padding>
+                <img class="user-image"
+                  [src]="item.user_image&&item.user_image!==''?item.user_image:'assets/img/dummy_pic.png'">
+              </ion-col>
+              <ion-col col-10 no-padding>
+
+                <div padding-left class="btn_box">
+                  <h2>Date : {{item.pick_date | date: 'dd-MM-yyy' }} <p>Time : {{item.time_left}}</p>
+</h2>
+                </div>
+
+                <div padding-left class="pickup_location">
+                  <span style="width: 70%;" item-start>Pickup Location : <b>{{item.pick_location}}</b></span>
+                  <span item-end class="text-yellow medium-text">{{item.amount}}£<br>
+                    <span item-end class="text-yellow">{{item.payment_type}} Payment</span></span>
+                </div>
+
+                <div padding-left class="Drop_location">
+                  <span style="width: 70%;" item-start>Drop Location : <b>{{item.drop_location}}</b></span>
+                </div>
+
+                <div padding-left margin-top>
+                  <h2>Booking No. : {{item.booking_ref }}</h2>
+                </div>
+              </ion-col>
+            </ion-row>
+            </div>
+          </div>
+        </ion-list>
+      </div>
+
+
+      <div *ngSwitchCase="'cat'">
+        <ion-list>
+          <div *ngFor="let item of historyList" class="history_list">
+            <ion-row>
+              <ion-col col-2 no-padding>
+                <img class="user-image"
+                  [src]="item.user_image&&item.user_image!==''?item.user_image:'assets/img/dummy_pic.png'">
+              </ion-col>
+              <ion-col col-10 no-padding>
+
+                <div padding-left class="btn_box">
+                  <h2>Date : {{item.pick_date | date: 'dd-MM-yyy' }} <p>Time : {{item.time_left}}</p>
+                  </h2>
+                </div>
+
+                <div padding-left class="pickup_location">
+                  <span style="width: 70%;" item-start>Pickup Location : <b>{{item.pick_location}}</b></span>
+                  <span item-end class="text-yellow medium-text">{{item.amount}}£<br>
+                    <span item-end class="text-yellow">{{item.payment_type}} Payment</span></span>
+                </div>
+
+                <div padding-left class="Drop_location">
+                  <span style="width: 70%;" item-start>Drop Location : <b>{{item.drop_location}}</b></span>
+                </div>
+
+                <div padding-left margin-top>
+                  <h2>Booking No. : {{item.booking_ref }}</h2>
+                </div>
+              </ion-col>
+            </ion-row>
+          </div>
+        </ion-list>
+      </div>
+    </div>
+
+
+  </div>
+</ion-content>

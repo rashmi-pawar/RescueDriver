@@ -1,0 +1,112 @@
+<ion-header class="top-header">
+    <ion-navbar>
+      <ion-title text-center>Details</ion-title>
+      <ion-buttons right class="hide_icn">
+        <button ion-button icon-only light class="text-white">
+          <ion-icon name=""></ion-icon>
+        </button>
+      </ion-buttons>
+    </ion-navbar>
+</ion-header>
+
+<ion-content margin-top>
+  <ion-list margin-top class="details_list transparent">
+    <ion-card class="transparent">
+      <ion-item class="transparent">
+        <div item-start>
+          <p><img src="assets/img/person.png"> {{detailData.username!==''?detailData.username:detailData.first_name+detailData.last_name}}</p>
+        </div>
+        <div item-end>
+          <p><img src="assets/img/number.png">
+            <span style="text-transform: uppercase;"> {{detailData.vehicle_number}}</span></p>
+        </div>
+      </ion-item>
+      <ion-item class="transparent">
+        <div item-start class="text-grey small-text">
+          <span>Total Fare Amount</span>
+        </div>
+        <div item-end>
+          <h4 class="big-text">£{{detailData.amount}}</h4>
+        </div>
+      </ion-item>
+      <div *ngIf="detailData.make!=''">
+      <ion-item class="transparent">
+        <div item-start>
+          <span class="text-grey small-text">Make</span>
+          <h5>{{detailData.make}}</h5>
+        </div>
+        <div item-end text-right>
+          <span class="text-grey small-text">Model</span>
+          <h5>{{detailData.model_no}}</h5>
+        </div>
+      </ion-item>
+      <ion-item class="transparent">
+        <div item-start>
+          <span class="text-grey small-text">Colour</span>
+          <h5>{{detailData.colour}}</h5>
+        </div>
+        <div item-end text-right>
+          <span class="text-grey small-text">Engg No.</span>
+          <h5>{{detailData.engine_number}}</h5>
+        </div>
+      </ion-item>
+      <ion-item class="transparent">
+        <div item-start>
+          <!--<span class="text-grey small-text">Chachis No.</span>
+          <h5>{{detailData.engine_number}}</h5>-->
+        </div>
+        <div item-end text-right>
+          <span class="text-grey small-text">Weight</span>
+          <h5>{{detailData.weight}}</h5>
+        </div>
+      </ion-item>
+    </div>
+      <ion-item class="transparent">
+        <div item-start>
+          <span class="text-grey small-text">Time</span>
+          <h5>{{detailData.pick_time}}</h5>
+        </div>
+        <div item-end text-right>
+          <span class="text-grey small-text">Distance</span>
+          <h5>{{detailData.distance}}</h5>
+        </div>
+      </ion-item>
+      <ion-item class="transparent">
+        <div item-start>
+          <span class="text-grey small-text">Day</span>
+          <h5>{{detailData.pick_date | date: 'dd-MM-yyy'}}</h5>
+        </div>
+        <div item-end text-right>
+          <span class="text-grey small-text">Total</span>
+          <h5>{{detailData.total_time}}</h5>
+        </div>
+      </ion-item>
+      <ion-item class="transparent">
+        <div item-start *ngIf="detailData.recovery_job_type!=''">
+          <span class="text-grey small-text">Type of transport</span>
+          <h5>{{detailData.recovery_job_type}}</h5>
+        </div>
+        <div item-end text-right>
+          <span class="text-grey small-text">Passengers</span>
+          <h5>{{detailData.passengers}}</h5>
+        </div>
+      </ion-item>
+      <div class="location_img">
+        <img src="assets/img/location.png">
+      </div>
+      <ion-item class="transparent address_box" no-border>
+        <div item-start text-canter>
+          <span class="text-grey small-text">Start</span>
+          <span style="width: 165px" class="text-grey small-text">{{detailData.pick_location}}</span>
+        </div>
+        <div item-end text-right text-canter>
+          <span class="text-grey small-text">End </span>
+          <span class="text-grey small-text">{{detailData.drop_location}} </span>
+        </div>
+      </ion-item>
+    </ion-card>
+  </ion-list>
+  <div padding>
+    <button ion-button block round margin-bottom class="yellow_btn" (click)="accept()">Accept</button>
+  </div>
+</ion-content>

@@ -1,0 +1,58 @@
+<ion-header class="top-header">
+  <ion-navbar>
+    <ion-title text-center>Notifications</ion-title>
+    <ion-buttons right class="notification_icn" (click)="notificaion()">
+      <button ion-button icon-only light class="text-white">
+        <img src="assets/img/notifications.png">
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<ion-content padding class="notifications">
+  <ion-refresher class="pull-refresh" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  <div *ngIf="isListEmpty" class="big-text" margin-top padding text-center>No Notifications are available.</div>
+  <div *ngIf="!isListEmpty">
+    <ion-list>
+      <ion-item *ngIf="isTodayAvailable" no-padding class="status_box">
+        <div item-start class="small-text">Today</div>
+        <div item-end (click)="clear(true)" class="small-text">Clear all</div>
+      </ion-item>
+
+      <div *ngFor="let item of notificationList">
+        <ion-card *ngIf="item.isToday" margin-bottom>
+          <ion-item>
+            <ion-avatar item-start>
+              <img src="assets/img/notifi-icn.png">
+            </ion-avatar>
+            <div class="medium-text medium-bold">{{item.message}}</div>
+            <!--<div class="small-text">Lorem Ipsum is simply dummy text of the printing and <br>type
+              setting industry. </div>-->
+            <!-- <div item-end  class="medium-bold text-yellow small-text">Now</div> -->
+          </ion-item>
+        </ion-card>
+      </div>
+
+      <ion-item *ngIf="isYesterdayAvailable" no-padding class="status_box">
+        <div item-start class="small-text">Yesterday</div>
+        <div item-end (click)="clear(false)" class="small-text">Clear</div>
+      </ion-item>
+
+      <div *ngFor="let item of notificationList">
+        <ion-card margin-bottom>
+          <ion-item>
+            <ion-avatar item-start>
+              <img src="assets/img/notifi-icn.png">
+            </ion-avatar>
+            <div class="medium-text medium-bold">{{item.message}}</div>
+            <!--<div class="small-text">Lorem Ipsum is simply dummy text of the printing and <br>type
+              setting industry. </div>-->
+            <!-- <div item-end  class="medium-bold text-yellow small-text">Now</div> -->
+          </ion-item>
+        </ion-card>
+      </div>
+
+    </ion-list>
+  </div>
+</ion-content>

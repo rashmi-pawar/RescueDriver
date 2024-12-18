@@ -1,0 +1,18 @@
+page-chat-list {
+    .item ion-avatar ion-img, .item ion-avatar img{
+    height: 40pt;
+    width: 40pt;
+    }      
+    .smallest-text {
+        margin: 0px;
+        font-size: 1rem;
+    }    
+    .item-inner {
+        align-items: initial;
+        padding-top: 8px;
+    }    
+    .text-grey {
+        font-style: italic;
+    }
+
+}

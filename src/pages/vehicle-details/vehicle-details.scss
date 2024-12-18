@@ -1,0 +1,82 @@
+page-vehicle-details {
+    .main-bg {
+        background-image: url(../assets/img/Login_bg.png);
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+    .main-bg .transparent .item-inner {
+        padding: 0px;
+        border-bottom: 1px solid #000000;
+    }
+    .signin-btn button{
+        width: 55%;
+        margin-top: 8rem;
+    }
+    .text-yellow {
+        font-size: 2rem;
+        margin-right: 5px;
+    }
+    .item-input .label {
+        color: #000;
+        font-size: 1.4rem;
+    }
+    .item-input .label img {
+        width: 16px;
+        margin-right: 5px;
+    }
+    .transparent.item {
+        background-image: url(../assets/img/upload.png);
+        background-repeat: no-repeat;
+        background-size: 18px;
+        background-position: 97% 55%;
+    }
+    .transparent.item .input{
+        opacity: 0;
+    }
+    .transparent.item.no-icn {
+        background-image:none;
+    }
+    .transparent.item.no-icn .input{
+        opacity: 1;
+    }
+    .main-bg .list {
+        margin: 20px 0px;
+    }
+
+  /*.fileInput {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+  }*/
+
+  .fileInput label {
+    color: #717171;
+    background-color: white;
+    display: inline-block;
+    cursor: pointer;
+    padding: .5em 1em;
+    border: 1px solid #ccc;
+    cursor: pointer;
+  }
+  .image-name{
+    width: 100px;
+    text-align: right;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    position: absolute;
+    top: 7px;
+    right: 25pt;
+  }
+  select{
+    //width: 100%;
+    background: transparent;
+    border: none;
+  }
+  .bottom-border{
+    border-bottom: 1px solid #000000 !important;
+  }
+}

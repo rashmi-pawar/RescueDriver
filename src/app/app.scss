@@ -1,0 +1,153 @@
+.text-grey {
+    color: #747474;
+}
+.text-white, .top-header .toolbar-title{
+    color: white;
+}
+.text-black {
+    color: black;
+}
+.text-orangee {
+    color: orange;
+}
+.text-yellow {
+    color: #F2B400;
+}
+.top-header button {
+    color: #fff;
+    font-size: 11pt;
+}
+.top-header .toolbar-title {
+    color: #fff;
+    font-size: 1.6rem;
+}
+.top-header, .top-header .toolbar-background, .top-header .toolbar {
+    background: #F2B400;
+    box-shadow: none;
+    border: none;
+}
+.top-header::after {
+    background: none;
+}
+.yellow_btn{
+    background: #F2B400;
+    box-shadow: none;
+    padding: 9px 20px;
+    text-transform: capitalize;
+    letter-spacing: 0.7px;
+}
+.yellow_bg{
+    background: #F2B400;
+}
+.transparent, .transparent .toolbar-background, .transparent .searchbar{
+    background: transparent;
+    box-shadow: none;
+    border: none;
+}
+.small-text {
+    font-size: 1.1rem;
+}
+.medium-text {
+    font-size:  1.3rem;
+}
+.big-text {
+    font-size: 1.5rem;
+}
+.medium-bold {
+    font-weight: 500;
+}
+.bold {
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+.semi-bold {
+    font-weight: bold;
+}
+.redius-5{
+    border-radius: 5px;
+}
+.redius-7{
+    border-radius: 7px;
+}
+.redius-10{
+    border-radius: 10px;
+}
+.redius-15{
+    border-radius: 15px;
+}
+.no-shadow{
+    box-shadow: none;
+}
+.show-back-button {
+    margin: 0px;
+}
+.transparent-btn{
+    background:transparent;
+    box-shadow: none;
+    border-radius: 7px;
+}
+.right{
+    float: right;
+}
+.list-ios > .item-block:first-child,
+.list-ios .item-block .item-inner,
+.list-ios > .item-block:last-child,
+.list-md .item-block .item-inner {
+    border: none;
+    background: transparent;
+}
+.top-header .drover_icn button {
+    display: block !important;
+}
+.list-ios > .item-block:first-child {
+    border-top: none;
+}
+.header::after,  .footer::before{
+    background:transparent;
+}
+.card {
+    width: 100%;
+    margin: 0px;
+}
+.hide_icn {
+    opacity: 0;
+    min-width: 44px;
+    padding: 0 5px;
+}
+
+.notification_icn img {
+    width: 16px;
+}
+
+.notification_icn {
+    width: 44px;
+    text-align: center;
+    padding: 0px 5px 0px;
+}
+
+.error-message {
+  color: red;
+  text-align: left;
+  margin-left: 5pt;
+  margin-top: 5pt;
+  font-size: 12px;
+}
+.right-align{
+  float: right;
+}
+.icon-eye{
+  font-size: 2.5rem;
+}
+.icon-div{
+  position: absolute;
+  z-index: 99999;
+  right: 15pt;
+  margin-top: -25pt;
+}
+.input-cover{
+  display: none;
+}
+ion-footer{
+  margin-top: env(safe-area-inset-top);
+  margin-bottom: env(safe-area-inset-bottom);
+}

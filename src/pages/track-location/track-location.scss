@@ -1,0 +1,49 @@
+page-track-location {
+    .green_dot, .red_dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+    }
+    .green_dot {
+        background: #48BD0F;
+    }
+    .red_dot{
+        background: #D94141;
+    }
+    .top-margin{
+      margin-top: 10pt;
+    }
+    .tracking_box .tracking_content .card {
+        box-shadow: 0px 0px 10px #d5d5d5b0;
+    }
+    .bottom_btn button {
+        border-radius: 25px;
+        font-size:1.3rem;
+        padding: 9px 25px;
+        width: 45%;
+    }
+    .bottom_btn {
+        display: inline-block;
+        width: 100%;
+    }
+    .Chat_btn {
+        background: #0099FF;
+        float: left;
+    }
+    .Call_btn{
+        background: #12A22A;
+        float: right;
+    }
+    .bottom_btn button .icon {
+        margin-left: 6px;
+    }
+    .yellow_btn {
+        font-size: 1.7rem;
+    }
+    .small-text {
+        color: #ababab;
+    }
+  .label{
+    margin: 0!important;
+  }
+}

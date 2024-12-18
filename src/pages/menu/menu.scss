@@ -1,0 +1,34 @@
+page-menu {
+    .user-div img {
+      width: 50px;
+      border-radius: 10px;
+      height: 50px;
+      object-fit: cover;
+    }  
+    .menu-inner .list-box .transparent .item-inner {
+      margin: 0px;
+    }
+    .menu-icons {
+      font-size: 2.2rem; 
+      width: 1.9rem;
+    }  
+    .item img.help {
+      margin-right: 17px;
+    }
+    .item img.share {
+      margin-right: 12px;
+    }
+    .transparent.item {
+      margin-bottom: 1.1rem;
+    }
+    .item-md .yellow_btn {
+      padding: 10px 15px;
+      height: auto;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+    }    
+    .medium-text {
+      font-weight: 500;
+    }
+}
+  
